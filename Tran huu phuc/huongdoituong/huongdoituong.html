@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-    class DanNhau{
-        constructor(_ten){
-            this.ten=_ten
-        }
-        an(moi){
-            moi.giam();
-        }
-        uong(nuoc){
-            nuoc.giam();
-        }
-        
-    }
-    class Moi{
-        constructor(_ten, _soLuong){
-            this.ten=_ten;
-            this.soLuong=_soLuong;
-        }
-        giam(){
-            this.soLuong=this.soLuong-1
-        }
-        info(){
-            if(this.soLuong>0){
-            console.log('tên món: '+this.ten+" Số lượng còn lại là: " + this.soLuong)
-        }else{
-            console.log("đã hết mồi")
-        }
-        }
-    }
-    class NuocUong{
-        constructor(_ten, _loai){
-            this.ten=_ten;
-            this.loai=_loai;
-            
-        }
-        setNuoc(_donVi){
-            this.donVi=_donVi;
-        }
-        giam(){
-            this.donVi=this.donVi-1
-        }
-        info(){
-            if(this.donVi>0){
-            console.log('ten: '+ this.ten+", "+"loai: "+this.loai+" ,so luong con lai: " + this.donVi)
-        }else{
-            console.log('đã hết nước');
-        }
-        }
-    }
+        class DanNhau {
+            constructor(_ten) {
+                this.ten = _ten
+            }
+            an(moi) {
+                moi.giam();
+            }
+            uong(nuoc) {
+                nuoc.giam();
+            }
 
-    let danNhau = new DanNhau("phuc");
-    let moi = new Moi('ếch rang lá chanh',1);
-    let nuoc =  new NuocUong('huda',"ice");
-    danNhau.an(moi);
-    nuoc.setNuoc(20);
-    danNhau.uong(nuoc);
-    console.log(moi.info());
-    console.log(nuoc.info());
+        }
+        class Moi {
+            constructor(_ten, _soLuong) {
+                this.ten = _ten;
+                this.soLuong = _soLuong;
+            }
+            giam() {
+                this.soLuong = this.soLuong - 1
+            }
+            info() {
+                if (this.soLuong > 0) {
+                    console.log('tên món: ' + this.ten + " Số lượng còn lại là: " + this.soLuong)
+                } else {
+                    console.log("đã hết mồi")
+                }
+            }
+        }
+        class NuocUong {
+            constructor(_ten, _loai) {
+                this.ten = _ten;
+                this.loai = _loai;
+
+            }
+            setNuoc(_donVi) {
+                this.donVi = _donVi;
+            }
+            giam() {
+                this.donVi = this.donVi - 1
+            }
+            info() {
+                if (this.donVi > 0) {
+                    console.log('ten: ' + this.ten + ", " + "loai: " + this.loai + " ,so luong con lai: " + this.donVi)
+                } else {
+                    console.log('đã hết nước');
+                }
+            }
+        }
+
+        let danNhau = new DanNhau("phuc");
+        let moi = new Moi('ếch rang lá chanh', 1);
+        let nuoc = new NuocUong('huda', "ice");
+        danNhau.an(moi);
+        nuoc.setNuoc(20);
+        danNhau.uong(nuoc);
+        console.log(moi.info());
+        console.log(nuoc.info());
 
     </script>
 </body>
+
 </html>
